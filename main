@@ -137,7 +137,7 @@ for i in range(15):
         print("y"+str(i+1)+"av"+str(i+1)+"="+str(round(b[0] + b[1]*X1[i]+b[2]*X2[i]+b[3]*X3[i]+b[4]*X1[i]*X2[i]+b[5]*X1[i]*X3[i]+b[6]*X2[i]*X3[i]+b[7]*X1[i]*X2[i]*X3[i]+b[8]*X1kv[i]+b[9]*X2kv[i]+b[10]*X3kv[i],3))+"="+ str(round( globals()['y%sav%s' % (i + 1, i + 1)],3)))
 print()
 
-dcouple = []
+dcouple = []                                                ;використовуємо для знаходження коефіцієнта Gp(дисперсія)
 for i in range(15):
     dcouple.append(round(globals()['d%s' % (i+1)] ,3 ))
 
@@ -171,7 +171,7 @@ if Gp < Gt:
     f3 = f1 * f2
     ttabl = round(abs(t.ppf(q / 2, f3)), 4)
 
-    d = 11
+    d = 11                                                      ;Пошук значимих коефіцієнів(174-179)
     for i in range(11):
         if ((abs(globals()['beta%s' % (i)]) / sbs) < ttabl):
             print("t%s <ttabl, b%s не значимий" % (i,i))
